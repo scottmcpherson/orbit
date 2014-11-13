@@ -1,0 +1,57 @@
+<head>
+  <title>tabs</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+
+  {{#NavBar class='bar-positive'}}
+    {{> NavBarTitle}}
+  {{/NavBar}}
+
+  {{#TabBar class="tabs-icon-left"}}
+    {{> TabBarItem text='One' template='One'}}
+    {{> TabBarItem text='Two' template='Two'}}
+    {{> TabBarItem text='Three' template='Three'}}
+    {{> TabBarItem text='Four' template='Four'}}
+    {{> TabBarItem text='Five' template='Five'}}
+  {{/TabBar}}
+
+</body>
+
+
+<template name="One">
+  <p>
+    <button class="button button-block button-light">
+      One
+    </button>
+  </p>
+</template>
+<template name="Two">
+  <p>
+    <button class="button button-block button-stable">
+      Two
+    </button>
+  </p>
+</template>
+<template name="Three">
+  <p>
+    <button class="button button-block button-positive">
+      Three
+    </button>
+  </p>
+</template>
+<template name="Four">
+  <p>
+    <button class="button button-block button-calm">
+      Four
+    </button>
+  </p>
+</template>
+<template name="Five">
+  <p>
+    <button class="button button-block button-balanced">
+      Five
+    </button>
+  </p>
+</template>

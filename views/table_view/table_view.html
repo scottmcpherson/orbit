@@ -1,0 +1,26 @@
+<template name="TableView">
+  {{#if isTableListView}}
+  <div class="content has-header">
+    <ul class="list">
+      {{> UI.contentBlock}}
+    </ul>
+  </div>
+  {{/if}}
+  {{#if isTableDetailView}}
+    {{> UI.dynamic template=detailTemplate}}
+  {{/if}}
+</template>
+
+<template name="TableViewItem">
+  <a class="item" href="{{href}}">
+    {{> UI.contentBlock}}
+  </a>
+</template>
+
+<template name="TableDetailView">
+  <div class="content has-header table-detail right">
+    <div class="content">
+      {{> UI.contentBlock}}
+    </div>
+  </div>
+</template>

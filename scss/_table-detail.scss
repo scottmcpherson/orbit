@@ -1,0 +1,27 @@
+.content.table-detail {
+  position: absolute !important;
+  top: 44px;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  z-index: 14;
+  background: #fff;
+}
+.content.table-detail.left {
+  -webkit-transform: translate3d(-100%, 0, 0);
+  transform: translate3d(-100%, 0, 0);
+}
+.content.table-detail.center {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.content.table-detail.right {
+  -webkit-transform: translate3d(100%, 0, 0);
+  transform: translate3d(100%, 0, 0);
+}
+.content.table-detail.transition {
+    -webkit-transition-duration: .25s;
+    transition-duration: .25s;
+}

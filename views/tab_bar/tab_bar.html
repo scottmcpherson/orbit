@@ -1,0 +1,39 @@
+<template name="TabBar">
+  <div class="content padding">
+    {{#with tabContentTemplate}}
+      {{> UI.dynamic template=this.template}}
+    {{/with}}
+  </div>
+  <div class="tabs" id="tab-bar">
+    {{> UI.contentBlock}}
+  </div>
+</template>
+
+<template name="TabBarItem">
+  <a class="tab-item {{class}}" href={{href}}>
+    {{text}}
+  </a>
+</template>
+
+
+<template name="default">
+  <p>
+    <button class="button">
+      Default
+    </button>
+  </p>
+</template>
+
+
+<template name="More">
+  <a class="tab-item {{class}}" href={{href}}>
+    More
+  </a>
+</template>
+
+<template name="TabContent">
+</template>
+
+<template name="MoreTabBarContent">
+
+</template>

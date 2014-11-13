@@ -1,0 +1,18 @@
+<template name="NavBar">
+  <div class="bar bar-header {{class}}">
+    {{#if isBackButtonVisible}}{{> BackButton}}{{/if}}
+    {{> UI.contentBlock}}
+  </div>
+</template>
+
+<template name="BackButton">
+  <button class="button ion-arrow-left-c">Back</button>
+</template>
+
+<template name="NavBarItem">
+  <button class="button {{class}}">{{text}}</button>
+</template>
+
+<template name="NavBarTitle">
+  <div class="h1 title">{{title}}</div>
+</template>

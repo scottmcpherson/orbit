@@ -1,0 +1,27 @@
+<head>
+  <title>table-view</title>
+</head>
+
+<body>
+  {{> GenericTable}}
+</body>
+
+<template name="GenericTable">
+  {{#NavBar class='bar-positive'}}
+    {{> NavBarTitle}}
+  {{/NavBar}}
+
+  {{#TableView detailTemplate="DetailView"}}
+    {{#each rows}}
+      {{#TableViewItem href="#" data=this}}
+        {{name}}
+      {{/TableViewItem}}
+    {{/each}}
+  {{/TableView}}
+</template>
+
+<template name="DetailView">
+  {{#TableDetailView}}
+    <p>Detail View</p>
+  {{/TableDetailView}}
+</template>
