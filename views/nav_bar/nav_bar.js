@@ -36,20 +36,20 @@ Orbit.navBar = {
   },
 
   openSideMenu: function () {
-    var container = $('.container');
+    var container = $('#container');
     container.addClass('menu-open open');
   },
 
   closeSideMenu: function () {
-    var container = $('.container');
+    var container = $('#container');
     container.removeClass('menu-open');
-    Orbit.transitionEnd('.container', function () {
+    Orbit.transitionEnd('#container', function () {
       container.removeClass('open');
     })
   },
 
   toggleSideMenu: function () {
-    var container = $('.container');
+    var container = $('#container');
     if (! container.hasClass('menu-open'))
       this.openSideMenu();
     else
@@ -57,6 +57,28 @@ Orbit.navBar = {
   },
 
 }
+
+
+
+Template.NavBar.helpers({
+  isBackButtonVisible: function () {
+    return Orbit.navBar.backButton.visible;
+  }
+});
+Template.NavBar.events({
+  'click': function (e, temp) {
+    console.log("clicked: ", temp);
+  }
+});
+Template.NavBar.created = function () {
+  console.log("created: ", this);
+
+}
+Template.NavBar.rendered = function () {
+  console.log("rendered: ", this);
+}
+
+
 
 Template.MenuButton.events({
   'click .menu-button': function (e) {
@@ -76,11 +98,7 @@ Template.BackButton.helpers({
   }
 });
 
-Template.NavBar.helpers({
-  isBackButtonVisible: function () {
-    return Orbit.navBar.backButton.visible;
-  }
-});
+
 
 Template.NavBarTitle.helpers({
   title: function() {
@@ -88,4 +106,16 @@ Template.NavBarTitle.helpers({
   },
 });
 
+Template.NavBarItem.events({
+  'click .nav-bar-item': function () {
+    var self = this;
+
+    if (this.modal)
+      Orbit.modal.showModal(self);
+
+  },
+  'click .dismis-modal': function () {
+    Orbit.modal.dismisModal();
+  }
+});
 

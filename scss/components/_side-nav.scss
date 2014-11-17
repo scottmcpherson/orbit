@@ -2,12 +2,9 @@
 //  Need to move clases from layouts file to here
 //=============================================================================
 
-.side-nav {
-
-}
 // TODO: Need to set specific classes for the side nav
 .side-nav {
-  z-index: -1;
+  z-index: $side-nav-z;
   @include translate3d(-50%, 0, 0);
   position: absolute;
   top: 0;
@@ -33,7 +30,6 @@
       }
     }
   }
-
 }
 
 .menu-open .side-nav {

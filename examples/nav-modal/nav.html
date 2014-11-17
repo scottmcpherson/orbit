@@ -4,17 +4,16 @@
 </head>
 
 <body>
-  <div class="container">
+  <div id="container">
     {{#SideNav}}
-      <ul>
-        <li><a href="">Home</a></li>
-        <li><a href="">Stars</a></li>
-      </ul>
+      <li><a href="">Home</a></li>
+      <li><a href="">Stars</a></li>
     {{/SideNav}}
     <div class="push-container">
       {{#NavBar}}
         {{> MenuButton}}
         {{> NavBarTitle}}
+        {{> NavBarItem text="Reveal" class="right" modal="TestModal"}}
       {{/NavBar}}
       <div class="view has-nav-bar">
         <div class="padding">
@@ -23,6 +22,13 @@
       </div>
     </div>
   </div>
-
 </body>
 
+<template name="TestModal">
+  {{#NavBar}}
+    {{> NavBarItem text="Done" class="right dismis-modal"}}
+  {{/NavBar}}
+  <div class="padding">
+    We got a modal
+  </div>
+</template>

@@ -14,7 +14,7 @@
     height: $bar-height - $bar-button-padding * 2;
     padding: $bar-button-padding;
     position: absolute;
-    z-index: $navBarButtonZ;
+    z-index: $nav-bar-button-z;
 
     &.icon-button {
       font-size: $bar-button-icon-font-size;
@@ -48,7 +48,7 @@
   &.nav-bar {
     top: 0;
     border-bottom: $bar-border;
-    z-index: $navBarZ;
+    z-index: $nav-bar-z;
 
     .title {
       top: 0;
@@ -70,7 +70,7 @@
     height: $tab-bar-height;
     bottom: 0;
     border-top: $bar-border;
-    z-index: $tabBarZ;
+    z-index: $tab-bar-z;
 
     .tab-bar-item {
       width: 100%;

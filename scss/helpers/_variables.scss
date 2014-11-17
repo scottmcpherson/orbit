@@ -64,11 +64,13 @@ $table-list-item-border: 1px solid $dividerGray !default;
 
 //    Z Indexes
 //===============================
-$side-nav-z: 0;
+$side-nav-z: -1;
 $view-z: 1;
-$tableDetailZ: 2;
-$navBarZ: 4;
-$navBarButtonZ: 6;
-$tabBarZ: 8;
+$table-detail-z: 2;
+$nav-bar-z: 4;
+$nav-bar-button-z: 6;
+$tab-bar-z: 8;
+$push-container-z: 10;
+$modal-z: 12;
 
 

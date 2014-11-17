@@ -1,12 +1,16 @@
 Orbit = {};
 Orbit.views = [];
-Orbit.animate = function(selector, transition, add) {
-  console.log("selector: ", selector);
-  console.log("transition: ", transition);
+Orbit.animate = function(selector, transition, add, cb) {
+  console.log('this', this);
+
   if (add)
     $(selector).addClass(transition);
   else
     $(selector).removeClass(transition);
+
+  if (_.isFunction(cb))
+    Orbit.transitionEnd(selector, function () { cb(); });
+
 };
 Orbit.transitionEnd = function(selector, cb) {
   $(selector).one('transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd',

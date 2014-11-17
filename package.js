@@ -35,6 +35,9 @@ Package.onUse(function(api) {
   api.addFiles([
     'views/orbit.js',
 
+    'views/modal/modal.html',
+    'views/modal/modal.js',
+
     'views/nav_bar/nav_bar.html',
     'views/nav_bar/nav_bar.js',
 
