@@ -1,0 +1,28 @@
+<head>
+  <title>nav</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <div class="container">
+    {{#SideNav}}
+      <ul>
+        <li><a href="">Home</a></li>
+        <li><a href="">Stars</a></li>
+      </ul>
+    {{/SideNav}}
+    <div class="push-container">
+      {{#NavBar}}
+        {{> MenuButton}}
+        {{> NavBarTitle}}
+      {{/NavBar}}
+      <div class="view has-nav-bar">
+        <div class="padding">
+          <p>hello</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+

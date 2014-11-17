@@ -1,32 +1,59 @@
 <template name="TabBar">
-  <div class="content padding">
-    {{#with tabContentTemplate}}
-      {{> UI.dynamic template=this.template}}
-    {{/with}}
+  <div class="view tab-bar-view {{class}}">
+    {{#if isIronRouter}}
+      {{> yield}}
+    {{else}}
+      {{#with tabContentTemplate}}
+        {{> UI.dynamic template=this.template}}
+      {{/with}}
+    {{/if}}
   </div>
-  <div class="tabs" id="tab-bar">
+  <div class="bar tab-bar {{class}}" id="tab-bar">
     {{> UI.contentBlock}}
   </div>
 </template>
 
 <template name="TabBarItem">
-  <a class="tab-item {{class}}" href={{href}}>
-    {{text}}
-  </a>
+  {{#if isIronRouter}}
+    <a class="tab-bar-item {{class}} {{isActive}}" href={{pathFor route}}>
+      {{#if icon}}
+        <i class="icon {{icon}}"></i>
+      {{/if}}
+      {{text}}
+    </a>
+  {{else}}
+    <a class="tab-bar-item {{class}} {{isActive}}" href="#">
+      {{#if icon}}
+        <i class="icon {{icon}}"></i>
+      {{/if}}
+      {{text}}
+    </a>
+  {{/if}}
 </template>
 
+<!-- <template name="TabBarItemBlock">
+  {{#if isIronRouter}}
+    <a class="tab-bar-item {{class}} {{isActive}}" href={{pathFor href}}>
+      {{> UI.contentBlock}}
+    </a>
+  {{else}}
+    <a class="tab-bar-item {{class}} {{isActive}}" href="#">
+      {{> UI.contentBlock}}
+    </a>
+  {{/if}}
+</template> -->
 
 <template name="default">
   <p>
     <button class="button">
-      Default
+      Not Found
     </button>
   </p>
 </template>
 
 
 <template name="More">
-  <a class="tab-item {{class}}" href={{href}}>
+  <a class="tab-bar-item {{class}}" href={{href}}>
     More
   </a>
 </template>
@@ -35,5 +62,4 @@
 </template>
 
 <template name="MoreTabBarContent">
-
 </template>

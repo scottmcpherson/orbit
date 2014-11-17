@@ -1,26 +1,36 @@
 <template name="TableView">
   {{#if isTableListView}}
-  <div class="content has-header">
-    <ul class="list">
-      {{> UI.contentBlock}}
-    </ul>
-  </div>
+    <div class="view table-view table-list-view {{class}}">
+      <ul class="item-list">
+        {{> UI.contentBlock}}
+      </ul>
+    </div>
   {{/if}}
   {{#if isTableDetailView}}
-    {{> UI.dynamic template=detailTemplate}}
+    <!-- {{#if isIronRouter}} -->
+      <!-- {{> yield}} -->
+    <!-- {{else}} -->
+      {{> UI.dynamic template=template}}
+    <!-- {{/if}} -->
   {{/if}}
 </template>
 
 <template name="TableViewItem">
-  <a class="item" href="{{href}}">
-    {{> UI.contentBlock}}
-  </a>
+  <li class="item-wrap">
+    {{#if isIronRouter}}
+      <a class="item" href={{pathFor route}}>
+        {{> UI.contentBlock}}
+      </a>
+    {{else}}
+      <a class="item" href="#">
+        {{> UI.contentBlock}}
+      </a>
+    {{/if}}
+  </li>
 </template>
 
 <template name="TableDetailView">
-  <div class="content has-header table-detail right">
-    <div class="content">
-      {{> UI.contentBlock}}
-    </div>
+  <div class="view table-detail-view has-nav-bar">
+    {{> UI.contentBlock}}
   </div>
 </template>

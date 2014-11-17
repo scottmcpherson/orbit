@@ -1,0 +1,12 @@
+<template name="TableList">
+  {{#TableView template="TableDetail" class="has-nav-bar"}}
+    {{#NavBar}}
+      {{> NavBarTitle}}
+    {{/NavBar}}
+    {{#each rows}}
+      {{#TableViewItem route="table.detail" _id=this._id }}
+        {{name}}
+      {{/TableViewItem}}
+    {{/each}}
+  {{/TableView}}
+</template>

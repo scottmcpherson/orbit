@@ -1,0 +1,25 @@
+<head>
+  <title>tabs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  {{#NavBar}}
+    {{> NavBarTitle}}
+  {{/NavBar}}
+
+  {{#TabBar class="icon-top has-nav-bar"}}
+    {{> TabBarItem text='Home' template='Home' icon='ion-ios7-home-outline'}}
+    {{> TabBarItem text='Stars' template='Stars' icon='ion-ios7-star-outline'}}
+  {{/TabBar}}
+
+  <h1>hello</h1>
+</body>
+
+<template name="Home">
+  <img src="home.png" alt="" width="100%">
+</template>
+
+<template name="Stars">
+  <img src="star.png" alt="" width="100%">
+</template>
+

@@ -1,0 +1,26 @@
+html, body {
+  height: 100%;
+}
+.container {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.push-container {
+  @include translate3d(0, 0, 0);
+  position: relative;
+  left: 0;
+  z-index: 101;
+  height: 100%;
+  @include transit-transform(0.5s);
+
+
+}
+.open .push-container {
+  border-left: 1px solid $darkGray;
+}
+.menu-open .push-container {
+  @include translate3d(260px, 0, 0);
+}
+

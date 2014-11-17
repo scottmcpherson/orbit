@@ -1,0 +1,26 @@
+.position-center {
+  @include translate3d(0, 0, 0);
+}
+.position-left {
+  @include translate3d(-100%, 0, 0);
+}
+
+.position-right {
+  @include translate3d(100%, 0, 0);
+}
+
+@mixin slide-along-center-to-left {
+  @include translate3d(-50%, 0, 0);
+  @include transit-all(0.5s);
+}
+
+@mixin slide-along-right-to-center {
+  @include translate3d(0, 0, 0);
+  @include transit-transform(0.5s);
+}
+
+
+// .position-transition {
+//   -webkit-transition-duration: .25s;
+//   transition-duration: .25s;
+// }

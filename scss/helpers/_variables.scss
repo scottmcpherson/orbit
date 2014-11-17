@@ -1,0 +1,74 @@
+//    Fonts
+//===============================
+$font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+
+//    Colors
+//===============================
+$defaultThemeColor: #007AFF !default;
+
+$white: #fff;
+$black: #000;
+$gray: #F8F8F8;
+$opacityGray: rgba($gray, 0.98);
+$darkGray: #929292;
+$borderGray: #B2B2B2;
+$dividerGray: #E9E9EB;
+$blue: #007AFF;
+
+
+//    Borders
+//===============================
+$defaultBorder: 1px solid $borderGray;
+
+
+//    Layout
+//===============================
+$defaultPadding: 8px;
+
+
+//    Bars
+//===============================
+$bar-height: 44px !default;
+$bar-background: $gray !default;
+$bar-border: $defaultBorder;
+$bar-button-padding: 5px !default;
+$bar-title-font-weight: 500 !default;
+$bar-button-icon-font-size: 28px !default;
+$bar-button-icon-padding: $bar-button-padding * 3 !default;
+
+
+//    Nav Bars
+//===============================
+$nav-bar-button-color: $defaultThemeColor !default;
+
+
+//    Tab Bars
+//===============================
+$tab-bar-height: $bar-height + 4 !default;
+$tab-bar-height-icon-top: $bar-height + 8 !default;
+$tab-bar-color: $darkGray !default;
+$tab-bar-active-color: $defaultThemeColor !default;
+
+
+//    Views
+//===============================
+$view-bg: $white;
+
+
+//    Table View
+//===============================
+$table-list-item-height: 44px !default;
+$table-list-item-padding: 15px !default;
+$table-list-item-border: 1px solid $dividerGray !default;
+
+
+//    Z Indexes
+//===============================
+$side-nav-z: 0;
+$view-z: 1;
+$tableDetailZ: 2;
+$navBarZ: 4;
+$navBarButtonZ: 6;
+$tabBarZ: 8;
+
+

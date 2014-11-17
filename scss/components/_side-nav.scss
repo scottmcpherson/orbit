@@ -1,0 +1,42 @@
+//=============================================================================
+//  Need to move clases from layouts file to here
+//=============================================================================
+
+.side-nav {
+
+}
+// TODO: Need to set specific classes for the side nav
+.side-nav {
+  z-index: -1;
+  @include translate3d(-50%, 0, 0);
+  position: absolute;
+  top: 0;
+  width: 300px;
+  height: 100%;
+  background: $gray;
+  @include transit-all(0.5s);
+
+  ul {
+    li {
+      height: $table-list-item-height;
+      line-height: $table-list-item-height;
+      border-bottom: $table-list-item-border;
+      padding-left: $table-list-item-padding;
+      padding-right: $table-list-item-padding;
+
+      a {
+        display: block;
+        color: $black;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+      }
+    }
+  }
+
+}
+
+.menu-open .side-nav {
+  @include transit-transform(0.5s);
+  @include translate3d(0, 0, 0);
+}

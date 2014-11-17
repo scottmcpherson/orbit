@@ -1,0 +1,29 @@
+<head>
+  <title>table-view</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  {{> GenericTable}}
+</body>
+
+<template name="GenericTable">
+  {{#NavBar class='bar-positive'}}
+    {{> NavBarTitle}}
+  {{/NavBar}}
+
+  {{#TableView template="DetailView" class="has-nav-bar"}}
+    {{#each rows}}
+      {{#TableViewItem href="#" data=this}}
+        {{name}}
+      {{/TableViewItem}}
+    {{/each}}
+  {{/TableView}}
+</template>
+
+<template name="DetailView">
+  {{#TableDetailView}}
+    <div class="padding">
+      <p>Detail View</p>
+    </div>
+  {{/TableDetailView}}
+</template>

@@ -1,18 +1,30 @@
 <template name="NavBar">
-  <div class="bar bar-header {{class}}">
+  <div class="bar nav-bar {{class}}">
     {{#if isBackButtonVisible}}{{> BackButton}}{{/if}}
+<!--     {{> NavBarMenuButton}} -->
     {{> UI.contentBlock}}
   </div>
 </template>
 
+<template name="SideNav">
+  <div class="side-nav">
+    {{> UI.contentBlock}}
+  </div>
+</template>
+
+
+<template name="MenuButton">
+  <a class="button icon-button menu-button"><i class="ion-navicon"></i></a>
+</template>
+
 <template name="BackButton">
-  <button class="button ion-arrow-left-c">Back</button>
+  <a class="back button left ion-ios7-arrow-back">{{backButtonText}}</a>
 </template>
 
 <template name="NavBarItem">
-  <button class="button {{class}}">{{text}}</button>
+  <a class="button {{class}}">{{text}}</a>
 </template>
 
 <template name="NavBarTitle">
-  <div class="h1 title">{{title}}</div>
+  <div class="title">{{title}}</div>
 </template>

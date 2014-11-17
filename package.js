@@ -10,9 +10,12 @@ Package.onUse(function(api) {
   api.use('fourseven:scss@1.0.0');
   api.use('session');
   api.use('underscore');
-  api.use('templating');
+  api.use('templating', 'client');
   api.use('tracker');
-  api.use('percolate:momentum');
+
+  api.use([
+    'rainhaven:orbit-theme-red'
+  ], { weak: true });
 
 
   api.addFiles([
@@ -21,7 +24,12 @@ Package.onUse(function(api) {
     'fonts/ionicons.ttf',
     'fonts/ionicons.woff',
     'scss/ionicons/ionicons.scss',
-    'scss/ionic.scss'
+    'scss/helpers/_variables.scss',
+    'scss/components/_bars.scss',
+    'scss/components/_view.scss',
+    'scss/components/_layouts.scss',
+    'scss/components/_side-nav.scss',
+    'scss/orbit.scss'
   ]);
 
   api.addFiles([

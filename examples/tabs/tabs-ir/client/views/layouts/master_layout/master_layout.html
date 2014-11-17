@@ -1,0 +1,13 @@
+<template name="MasterLayout">
+  {{#NavBar}}
+    {{> BackButton}}
+    {{> NavBarTitle}}
+  {{/NavBar}}
+
+  <!-- No need to include {{> yield}} when using the TabBar block
+  helper as long as you pass a route name in, e.g. route="route.name" -->
+  {{#TabBar class="icon-top has-nav-bar"}}
+    {{> TabBarItem text='Home' route="home" icon='ion-ios7-home-outline'}}
+    {{> TabBarItem text='Stars' route="stars" icon='ion-ios7-star-outline'}}
+  {{/TabBar}}
+</template>
