@@ -23,8 +23,8 @@ Template.TableList.created = function () {
 };
 
 Template.TableList.rendered = function () {
-  Orbit.navBar.title = "Numbered Rows";
-  Orbit.navBar.backButton.isBackButtonVisible = false;
+  // Orbit.navBar.title = "Numbered Rows";
+  // Orbit.navBar.backButton.isBackButtonVisible = false;
 };
 
 Template.TableList.destroyed = function () {

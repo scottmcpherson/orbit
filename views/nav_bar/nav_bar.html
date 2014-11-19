@@ -1,6 +1,7 @@
 <template name="NavBar">
   <div class="bar nav-bar {{class}}">
-    {{#if isBackButtonVisible}}{{> BackButton}}{{/if}}
+    <!-- {{#if isBackButtonVisible}}{{> BackButton}}{{/if}} -->
+    {{> NavBarTitle title=title}}
 <!--     {{> NavBarMenuButton}} -->
     {{> UI.contentBlock}}
   </div>
@@ -16,7 +17,7 @@
 
 
 <template name="MenuButton">
-  <a class="button icon-button menu-button"><i class="ion-navicon"></i></a>
+  <a class="button icon-button menu-button {{class}}"><i class="ion-navicon"></i></a>
 </template>
 
 <template name="BackButton">

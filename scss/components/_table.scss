@@ -3,6 +3,7 @@
 .table-view {
   overflow: hidden;
   overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
   &.table-list-view {
     @include translate3d(0, 0, 0);
 

@@ -7,11 +7,14 @@ Package.describe({
 
 Package.onUse(function(api) {
   api.versionsFrom('1.0');
+  api.use('iron:router', { weak: true });
   api.use('fourseven:scss@1.0.0');
+  api.use('reactive-var');
   api.use('session');
   api.use('underscore');
   api.use('templating', 'client');
   api.use('tracker');
+  // api.use('webapp');
 
   api.use([
     'rainhaven:orbit-theme-red'
@@ -34,6 +37,8 @@ Package.onUse(function(api) {
 
   api.addFiles([
     'views/orbit.js',
+    'views/view.js',
+    'views/animations.js',
 
     'views/modal/modal.html',
     'views/modal/modal.js',

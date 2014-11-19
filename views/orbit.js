@@ -1,7 +1,23 @@
+// Orbit Name Space
 Orbit = {};
+
 Orbit.views = [];
+
+// Orbit.Animation = function () {
+
+// }
+// Orbit.Animation.prototype = {
+//   animate: function () {
+//     console.log("animate stuff");
+//   }
+// }
+
+
+
+
+
+
 Orbit.animate = function(selector, transition, add, cb) {
-  console.log('this', this);
 
   if (add)
     $(selector).addClass(transition);
@@ -20,11 +36,19 @@ Orbit.transitionEnd = function(selector, cb) {
 };
 Orbit.helpers = {
   isIronRouter: function () {
-    console.log("is IR: ", (typeof Iron !== 'undefined' && _.isObject(Iron)));
+    // console.log("is IR: ", (typeof Iron !== 'undefined' && _.isObject(Iron)));
     return (typeof Iron !== 'undefined' && _.isObject(Iron));
   }
 }
 
 _.each(Orbit.helpers, function (helper, key) {
   Template.registerHelper(key, helper);
+});
+
+Meteor.startup(function () {
+  _.extend(Blaze.TemplateInstance.prototype, {
+    logInstance: function () {
+      console.log("logging instance: ", this);
+    }
+  })
 });

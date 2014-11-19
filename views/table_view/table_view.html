@@ -1,18 +1,16 @@
 <template name="TableView">
-  {{#if isTableListView}}
-    <div class="view table-view table-list-view {{class}}">
-      <ul class="item-list">
-        {{> UI.contentBlock}}
-      </ul>
-    </div>
+  {{> UI.contentBlock}}
+  {{#if tableDetailView}}
+    {{> TableDetailView}}
   {{/if}}
-  {{#if isTableDetailView}}
-    <!-- {{#if isIronRouter}} -->
-      <!-- {{> yield}} -->
-    <!-- {{else}} -->
-      {{> UI.dynamic template=template}}
-    <!-- {{/if}} -->
-  {{/if}}
+</template>
+
+<template name="TableListView">
+  <div class="view table-view table-list-view {{class}}">
+    <ul class="item-list">
+      {{> UI.contentBlock}}
+    </ul>
+  </div>
 </template>
 
 <template name="TableViewItem">
@@ -30,7 +28,7 @@
 </template>
 
 <template name="TableDetailView">
-  <div class="view table-detail-view has-nav-bar">
-    {{> UI.contentBlock}}
+  <div class="view table-detail-view has-nav-bar transit-transform">
+    {{> UI.dynamic template=this.template}}
   </div>
 </template>

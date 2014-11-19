@@ -30,7 +30,7 @@ if (Meteor.isClient) {
     },
   });
   Template.DetailView.rendered = function () {
-    Orbit.navBar.backButton.isVisible = true;
+    // Orbit.navBar.backButton.isVisible = true;
   }
 }
 

@@ -10,9 +10,8 @@
       <li><a href="">Stars</a></li>
     {{/SideNav}}
     <div class="push-container">
-      {{#NavBar}}
-        {{> MenuButton}}
-        {{> NavBarTitle}}
+      {{#NavBar handle='primaryNav'}}
+        {{> MenuButton class="some-class"}}
         {{> NavBarItem text="Reveal" class="right" modal="TestModal"}}
       {{/NavBar}}
       <div class="view has-nav-bar">
@@ -25,8 +24,8 @@
 </body>
 
 <template name="TestModal">
-  {{#NavBar}}
-    {{> NavBarItem text="Done" class="right dismis-modal"}}
+  {{#NavBar handle='modalNav' title='Modal'}}
+    {{> NavBarItem text="Done" class="right" action='dismisModal'}}
   {{/NavBar}}
   <div class="padding">
     We got a modal

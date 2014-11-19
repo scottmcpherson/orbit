@@ -1,11 +1,10 @@
 <template name="TableDetail">
-  {{#TableDetailView}}
-    {{#NavBar}}
-      {{> BackButton}}
-      {{> NavBarTitle}}
-    {{/NavBar}}
-    <div class="padding">
-      <p>Detail View</p>
-    </div>
-  {{/TableDetailView}}
+  <h1>Got It</h1>
+  {{#NavBar title='Detail' handle='detailTableNav'}}
+    {{> BackButton}}
+    {{> NavBarTitle}}
+  {{/NavBar}}
+  <div class="padding">
+    <p>Detail View</p>
+  </div>
 </template>
