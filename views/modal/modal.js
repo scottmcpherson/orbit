@@ -17,6 +17,7 @@ Orbit.ModalView = function (options) {
   options = options || {};
   this._blazeView = options._blazeViewiew || null;
   this.selector = options.selector || '.modal-view';
+  this.transitionClass = options.transitionClass || 'slide-up';
 }
 Orbit.ModalView.prototype = new Orbit.View();
 
@@ -43,8 +44,12 @@ Template._Modal.created = function () {
   });
 }
 Template._Modal.rendered = function () {
-  console.log("rendered modal: ", this);
-  $(this.firstNode).addClass('slide-up');
+  var self = this;
+  Meteor.setTimeout(function() {
+    self._modalView.transition();
+  }, 100)
+
+  // $(this.firstNode).addClass('slide-up');
   // this._modalView.slideUp();
   // this.firstNode.addClass('slide-up');
   // $('.modal-view').addClass('');

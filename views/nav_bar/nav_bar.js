@@ -59,7 +59,8 @@ Template.MenuButton.events({
 Template.BackButton.events({
   'click .back.button': function (e) {
     if (typeof Template.instance()._tableDetailView !== 'undefined')
-      Template.instance()._tableDetailView.transitionListView(function() {
+      Template.instance()._tableListView.transition();
+      Template.instance()._tableDetailView.transition(function() {
         Session.set('tableDetail', false);
         history.back();
       });

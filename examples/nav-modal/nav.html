@@ -1,9 +1,28 @@
 <head>
   <title>nav</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    .blue-square {
+      color: #fff;
+      line-height: 100px;
+      text-align: center;
+      width: 100px;
+      height: 100px;
+      background: #007AFF;
+      transform: translate3d(100px, 100px, 0)
+    }
+    .blue-square:hover {
+      cursor: pointer;
+    }
+  </style>
 </head>
 
 <body>
+  {{> MainContent}}
+</body>
+
+
+<template name="MainContent">
   <div id="container">
     {{#SideNav}}
       <li><a href="">Home</a></li>
@@ -15,13 +34,22 @@
         {{> NavBarItem text="Reveal" class="right" modal="TestModal"}}
       {{/NavBar}}
       <div class="view has-nav-bar">
-        <div class="padding">
-          <p>hello</p>
-        </div>
+        {{#View selector='hello' handle='blueSquare' class='blue-square blue-square-one'}}
+          Blue
+        {{/View}}
+        {{#View selector='hello-two' handle='blueSquareTwo' class='blue-square blue-square-two'}}
+          Blue
+        {{/View}}
+        {{#View selector='hello3-three' handle='blueSquareThree' class='blue-square blue-square-three'}}
+          Blue
+        {{/View}}
       </div>
     </div>
   </div>
-</body>
+</template>
+
+
+
 
 <template name="TestModal">
   {{#NavBar handle='modalNav' title='Modal'}}

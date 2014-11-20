@@ -1,7 +1,7 @@
 <template name="TableList">
   {{#TableView route="table.detail" template="TableDetail"}}
 
-    {{#TableListView class="has-nav-bar"}}
+    {{#TableListView class="has-nav-bar" handle='random'}}
       {{#NavBar title="Table List"}}
       {{/NavBar}}
       {{#each rows}}

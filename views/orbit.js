@@ -17,17 +17,17 @@ Orbit.views = [];
 
 
 
-Orbit.animate = function(selector, transition, add, cb) {
+// Orbit.animate = function(selector, transition, add, cb) {
 
-  if (add)
-    $(selector).addClass(transition);
-  else
-    $(selector).removeClass(transition);
+//   if (add)
+//     $(selector).addClass(transition);
+//   else
+//     $(selector).removeClass(transition);
 
-  if (_.isFunction(cb))
-    Orbit.transitionEnd(selector, function () { cb(); });
+//   if (_.isFunction(cb))
+//     Orbit.transitionEnd(selector, function () { cb(); });
 
-};
+// };
 Orbit.transitionEnd = function(selector, cb) {
   $(selector).one('transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd',
     function() {

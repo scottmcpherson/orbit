@@ -11,6 +11,10 @@
     padding-top: $bar-height;
   }
   z-index: $view-z;
+
+  .view {
+    position: relative;
+  }
 }
 
 //    Tab Bar View

@@ -7,7 +7,8 @@ Package.describe({
 
 Package.onUse(function(api) {
   api.versionsFrom('1.0');
-  api.use('iron:router', { weak: true });
+  // api.use('percolate:velocityjs', 'client');
+  // api.imply('percolate:velocityjs', 'client');
   api.use('fourseven:scss@1.0.0');
   api.use('reactive-var');
   api.use('session');
@@ -19,7 +20,6 @@ Package.onUse(function(api) {
   api.use([
     'rainhaven:orbit-theme-red'
   ], { weak: true });
-
 
   api.addFiles([
     'fonts/ionicons.eot',
@@ -39,6 +39,9 @@ Package.onUse(function(api) {
     'views/orbit.js',
     'views/view.js',
     'views/animations.js',
+
+    'views/view/view.html',
+    'views/view/view.js',
 
     'views/modal/modal.html',
     'views/modal/modal.js',

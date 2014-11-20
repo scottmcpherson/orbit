@@ -7,8 +7,8 @@ Template.TableView.helpers({
   },
 })
 Template.TableView.rendered = function () {
-  console.log(this.data.route);
   var self = this;
+
   this.autorun(function () {
     if (self.data && self.data.route && typeof Router !== 'undefined') {
       if (Router.current().route.getName() === self.data.route)
@@ -25,6 +25,7 @@ Template.TableView.rendered = function () {
 Orbit.TableListView = function (options) {
   options = options || {};
   this.selector = options.selector || '.table-list-view';
+  this.transitionClass = options.transitionClass || 'slide-along-center-to-left';
 }
 Orbit.TableListView.prototype = new Orbit.View();
 
@@ -43,6 +44,7 @@ Template.TableListView.created = function () {
 Orbit.TableDetailView = function (options) {
   options = options || {};
   this.selector = options.selector || '.table-detail-view';
+  this.transitionClass = options.transitionClass || 'slide-along-right-to-center';
 }
 Orbit.TableDetailView.prototype = new Orbit.View();
 
@@ -51,12 +53,10 @@ Orbit.TableDetailView.prototype = new Orbit.View();
 Template.TableDetailView.helpers({
   template: function () {
     return { template: this.template }
-    // console.log(this);
   },
 });
 
 Template.TableDetailView.created = function () {
-  console.log(this);
   var _tableDetailView = new Orbit.TableDetailView();
   if (this.data && this.data.handle)
     Orbit[this.data.handle] = _tableDetailView;
@@ -68,10 +68,12 @@ Template.TableDetailView.created = function () {
 Template.TableDetailView.rendered = function () {
   var self = this;
   Meteor.setTimeout(function () {
-    self._tableListView.transitionDetailView()
-  }, 100)
+    // self._tableListView.transition();
+    console.log('translateX')
+    self._tableListView.transition();
+    self._tableDetailView.transition();
+  }, 80);
 
-  console.log('table detail: ', this);
 }
 //=============================================================================
 //  Table List Item
