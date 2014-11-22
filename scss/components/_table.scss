@@ -7,9 +7,9 @@
   &.table-list-view {
     @include translate3d(0, 0, 0);
 
-    &.slide-along-center-to-left {
-      @include slide-along-center-to-left();
-    }
+    // &.slide-along-center-to-left {
+    //   @include slide-along-center-to-left();
+    // }
   }
   .item-list {
     .item-wrap {
@@ -35,8 +35,8 @@
 //    Table Detail View
 //===============================
 .view.table-detail-view {
-  @include translate3d(100%, 0, 0);
-  @include transit-transform(0.5s);
+  @include translate3d(0, 0, 0);
+  // @include transit-transform(0.5s);
   z-index: $table-detail-z;
   background: $white;
   transition: background 0.4s, opacity 0.4s;

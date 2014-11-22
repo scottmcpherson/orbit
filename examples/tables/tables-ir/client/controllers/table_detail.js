@@ -1,6 +1,5 @@
 TableDetailController = RouteController.extend({
-  template: 'TableList',
-
+  layoutTemplate: 'TableLayout',
   waitOn: function () {
   },
 
@@ -8,7 +7,7 @@ TableDetailController = RouteController.extend({
   },
 
   onBeforeAction: function() {
-    Session.set('selectedTableItem', this.params._id);
+    // Session.set('selectedTableItem', this.params._id);
     this.next();
   },
 

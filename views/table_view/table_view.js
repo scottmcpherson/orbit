@@ -7,16 +7,78 @@ Template.TableView.helpers({
   },
 })
 Template.TableView.rendered = function () {
-  var self = this;
+  console.log(this);
 
-  this.autorun(function () {
-    if (self.data && self.data.route && typeof Router !== 'undefined') {
-      if (Router.current().route.getName() === self.data.route)
-        Session.set('tableDetail', true)
-      else
-        Session.set('tableDetail', false)
+  this.find('#table')._uihooks = {
+    insertElement: function(node, next) {
+
+      var $node = $(node);
+      var $lastNode = $(this.lastNode);
+
+      var nodeData = Blaze.getData(node);
+      var lastNodeData = Blaze.getData(this.lastNode);
+      console.log("last Node data: ", $lastNode);
+
+      if (nodeData.orbitViewIndex === 1) {
+
+          $node
+            .insertBefore(next)
+            .velocity({
+              translateX: ['0%', '100%'],
+            }, {
+              duration: 500,
+              progress: function(elements, percentComplete, timeRemaining, timeStart) {
+                // console.log('adding: ' + (percentComplete * 100) + "%");
+                // console.log(timeRemaining + "ms remaining!");
+              }
+            });
+
+
+          $lastNode
+            .velocity({
+              translateX: ['-50%', '0%'],
+            }, {
+              complete: function() { $lastNode.remove(); },
+              duration: 500,
+              progress: function(elements, percentComplete, timeRemaining, timeStart) {
+                // console.log('removing: ' + (percentComplete * 100) + "%");
+                // console.log(timeRemaining + "ms remaining!");
+              }
+            });
+      } else {
+          $node
+            .insertBefore(next)
+            .velocity({
+              translateX: ['0%', '-50%'],
+            }, {
+              duration: 500,
+              progress: function(elements, percentComplete, timeRemaining, timeStart) {
+                // console.log('adding: ' + (percentComplete * 100) + "%");
+                // console.log(timeRemaining + "ms remaining!");
+              }
+            });
+
+
+          $lastNode
+            .velocity({
+              translateX: ['100%', '0%'],
+            }, {
+              complete: function() { $lastNode.remove(); },
+              duration: 500,
+              progress: function(elements, percentComplete, timeRemaining, timeStart) {
+                // console.log('removing: ' + (percentComplete * 100) + "%");
+                // console.log(timeRemaining + "ms remaining!");
+              }
+            });
+      }
+
+    },
+    removeElement: function(node) {
+      var $node = $(node);
+      console.log(node);
+      this.lastNode = node;
     }
-  });
+  }
 }
 
 //=============================================================================
@@ -30,13 +92,21 @@ Orbit.TableListView = function (options) {
 Orbit.TableListView.prototype = new Orbit.View();
 
 Template.TableListView.created = function () {
-  var _tableListView = new Orbit.TableListView();
-  if (this.data && this.data.handle)
-    Orbit[this.data.handle] = _tableListView;
-  _.extend(this.__proto__, {
-    _tableListView: _tableListView
-  });
+  console.log(this.data);
+  // var _tableListView = new Orbit.TableListView();
+  // if (this.data && this.data.handle)
+  //   Orbit[this.data.handle] = _tableListView;
+  // _.extend(this.__proto__, {
+  //   _tableListView: _tableListView
+  // });
+
+  // var data =  this.data || {};
+  this.data.orbitView = this.data.view || 'tableListView';
+  this.data.orbitViewIndex = this.data.index || 0;
+
+  console.log(this.data);
 };
+
 
 //=============================================================================
 //  Table Detail View
@@ -63,18 +133,17 @@ Template.TableDetailView.created = function () {
   _.extend(this.__proto__, {
     _tableDetailView: _tableDetailView
   });
+
+  //=============================================================================
+  //  Need to pass data through the blaze view?
+  //=============================================================================
+  // This is where we have to set our
+  // data if we want to access it later
+  var data =  this.data || {};
+  this.data.orbitView = data.view || 'tableDetailView';
+  this.data.orbitViewIndex = data.index || 1;
 };
 
-Template.TableDetailView.rendered = function () {
-  var self = this;
-  Meteor.setTimeout(function () {
-    // self._tableListView.transition();
-    console.log('translateX')
-    self._tableListView.transition();
-    self._tableDetailView.transition();
-  }, 80);
-
-}
 //=============================================================================
 //  Table List Item
 //=============================================================================
@@ -92,12 +161,12 @@ Template.TableDetailView.rendered = function () {
 //   },
 // });
 // Template.TableView.helpers({
-//   isTableListView: function () {
-//     return Session.get('isTableListView');
-//   },
-//   isTableDetailView: function () {
-//     return ! Session.equals('selectedTableItem', '');
-//   },
+//   // isTableListView: function () {
+//   //   return Session.get('isTableListView');
+//   // },
+//   // isTableDetailView: function () {
+//   //   return ! Session.equals('selectedTableItem', '');
+//   // },
 // });
 
 // Template.TableView.destroyed = function () {

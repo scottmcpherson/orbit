@@ -2,6 +2,14 @@
   <title>nav</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
+    .blue {
+      color: #fff;
+      width: 100%;
+      text-align: center;
+      background: #007AFF;
+      padding: 1rem;
+      box-sizing: border-box;
+    }
     .blue-square {
       color: #fff;
       line-height: 100px;
@@ -18,12 +26,15 @@
 </head>
 
 <body>
-  {{> MainContent}}
+  <div id="container">
+    {{> MainContent}}
+  </div>
 </body>
 
 
 <template name="MainContent">
-  <div id="container">
+
+
     {{#SideNav}}
       <li><a href="">Home</a></li>
       <li><a href="">Stars</a></li>
@@ -45,7 +56,7 @@
         {{/View}}
       </div>
     </div>
-  </div>
+
 </template>
 
 

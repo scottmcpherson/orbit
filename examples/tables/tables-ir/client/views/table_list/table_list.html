@@ -1,15 +1,13 @@
 <template name="TableList">
-  {{#TableView route="table.detail" template="TableDetail"}}
 
-    {{#TableListView class="has-nav-bar" handle='random'}}
-      {{#NavBar title="Table List"}}
-      {{/NavBar}}
-      {{#each rows}}
-        {{#TableViewItem route="table.detail" _id=this._id }}
-          {{name}}
-        {{/TableViewItem}}
-      {{/each}}
-    {{/TableListView}}
+  {{#TableListView index=0 class="has-nav-bar" handle='random'}}
+    {{#NavBar title="Table List"}}
+    {{/NavBar}}
+    {{#each rows}}
+      {{#TableViewItem route="table.detail" _id=this._id }}
+        {{name}}
+      {{/TableViewItem}}
+    {{/each}}
+  {{/TableListView}}
 
-  {{/TableView}}
 </template>

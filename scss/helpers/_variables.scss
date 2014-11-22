@@ -4,16 +4,39 @@ $font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 
 //    Colors
 //===============================
-$defaultThemeColor: #007AFF !default;
-
 $white: #fff;
-$black: #000;
 $gray: #F8F8F8;
 $opacityGray: rgba($gray, 0.98);
 $darkGray: #929292;
 $borderGray: #B2B2B2;
 $dividerGray: #E9E9EB;
+// From: http://ios8colors.com/
+$light-gray: #C7C7CC;
+$dark-gray: #8E8E93;
+$black: #1F1F21;
+$red: #FF3B30;
+$orange: #FF9500;
+$yellow: #FFCC00;
+$green: #4CD964;
+$light-blue: #34AADC;
 $blue: #007AFF;
+$purple: #5856D6;
+// This list needs to match up with the
+// theme color variables used to iterate
+// with mixin to assign theme colors to
+// elements in base/typography.scss
+$themes: (light-gray, #C7C7CC),
+  (dark-gray, #8E8E93),
+  (black, #1F1F21),
+  (red, #FF3B30),
+  (orange, #FF9500),
+  (yellow, #FFCC00),
+  (green, #4CD964),
+  (light-blue, #34AADC),
+  (blue, #007AFF),
+  (purple, #5856D6);
+
+$defaultThemeColor: $blue !default;
 
 
 //    Borders
@@ -23,7 +46,7 @@ $defaultBorder: 1px solid $borderGray;
 
 //    Layout
 //===============================
-$defaultPadding: 8px;
+$defaultPadding: 0.5rem;
 
 
 //    Bars

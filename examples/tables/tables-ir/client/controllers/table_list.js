@@ -1,4 +1,5 @@
 TableListController = RouteController.extend({
+  layoutTemplate: 'TableLayout',
   waitOn: function () {
   },
 

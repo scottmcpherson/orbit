@@ -15,6 +15,7 @@ Package.onUse(function(api) {
   api.use('underscore');
   api.use('templating', 'client');
   api.use('tracker');
+  api.use('percolate:velocityjs');
   // api.use('webapp');
 
   api.use([
@@ -28,12 +29,14 @@ Package.onUse(function(api) {
     'fonts/ionicons.woff',
     'scss/ionicons/ionicons.scss',
     'scss/helpers/_variables.scss',
+    'scss/base/_typography.scss',
+    'scss/components/_grid.scss',
     'scss/components/_bars.scss',
     'scss/components/_view.scss',
     'scss/components/_layouts.scss',
     'scss/components/_side-nav.scss',
-    'scss/orbit.scss'
-  ]);
+    'scss/orbit.scss',
+  ], 'client');
 
   api.addFiles([
     'views/orbit.js',

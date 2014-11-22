@@ -1,3 +1,35 @@
 html * {
   font-family: $font-family;
 }
+$light-gray: #C7C7CC;
+$dark-gray: #8E8E93;
+$black: #1F1F21;
+$red: #FF3B30;
+$orange: #FF9500;
+$yellow: #FFCC00;
+$green: #4CD964;
+$light-blue: #34AADC;
+$blue: #007AFF;
+$purple: #5856D6;
+
+
+
+h1 { font-size: 2em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.17em; }
+h5 { font-size: .83em; }
+h6 { font-size: .75em; }
+
+$typography-tags: h1, h2, h3, h4, h6, p, span;
+
+
+@mixin assign-theme ($tag, $theme, $color) {
+  #{$tag}.#{$theme} {
+    color: $color;
+  }
+}
+@each $tag in $typography-tags {
+  @each $theme in $themes {
+    @include assign-theme($tag, $theme: nth($theme, 1), $color: nth($theme, 2));
+  }
+}

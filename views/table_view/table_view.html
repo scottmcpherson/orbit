@@ -1,8 +1,7 @@
 <template name="TableView">
-  {{> UI.contentBlock}}
-  {{#if tableDetailView}}
-    {{> TableDetailView}}
-  {{/if}}
+  <div id="table">
+    {{> UI.contentBlock}}
+  </div>
 </template>
 
 <template name="TableListView">
@@ -28,7 +27,7 @@
 </template>
 
 <template name="TableDetailView">
-  <div class="view table-detail-view has-nav-bar transit-transform">
-    {{> UI.dynamic template=this.template}}
+  <div class="view table-detail-view has-nav-bar">
+    {{> UI.contentBlock}}
   </div>
 </template>

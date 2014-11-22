@@ -1,0 +1,49 @@
+.blue-box {
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  background: #007AFF;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  min-height: 46px;
+  line-height: 26px;
+}
+
+.dark-blue-box {
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  background: #0B56A8;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  min-height: 46px;
+  line-height: 26px;
+}
+
+/* Row Top */
+.row-top .col:first-child .blue-box {
+  height: 64px;
+}
+
+
+/* Row Center */
+.row-center .col:first-child .blue-box {
+  height: 64px;
+}
+
+
+/* Row Bottom */
+.row-bottom .col:first-child .blue-box {
+  height: 64px;
+}
+
+
+/* First Columns for Rows */
+.row .col:first-child .blue-box {
+  height: 64px;
+}
+/* First Columns for Rows */
+.row .col-2:first-child .blue-box {
+  height: 64px;
+  line-height: 40px;
+}

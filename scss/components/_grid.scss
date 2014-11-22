@@ -1,0 +1,77 @@
+// Inspiration for this grid was taken from
+// http://philipwalton.github.io/solved-by-flexbox/demos/grids/
+
+.row {
+  @include flexbox();
+  @include flex-wrap(wrap);
+  box-sizing: border-box;
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+
+  .col {
+    @include flex(1);
+    box-sizing: border-box;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+  }
+  .col-1 {
+    @extend .col;
+    @include flex(0, 0, 12.5%);
+  }
+  .col-2 {
+    @extend .col;
+    @include flex(0, 0, 25%);
+  }
+  .col-3 {
+    @extend .col;
+    @include flex(0, 0, 37.5%);
+  }
+  .col-4 {
+    @extend .col;
+    @include flex(0, 0, 50%);
+  }
+  .col-5 {
+    @extend .col;
+    @include flex(0, 0, 62.5%);
+  }
+  .col-6 {
+    @extend .col;
+    @include flex(0, 0, 75%);
+  }
+  .col-7 {
+    @extend .col;
+    @include flex(0, 0, 87.5%);
+  }
+  .col-8 {
+    @extend .col;
+    @include flex(0, 0, 100%);
+  }
+
+  .col-top {
+    @extend .col;
+    @include align-self(flex-start);
+  }
+  .col-center {
+    @extend .col;
+    @include align-self(center);
+  }
+  .col-bottom {
+    @extend .col;
+    @include align-self(flex-end);
+  }
+}
+
+.row-top {
+  @extend .row;
+  @include align-items(flex-start);
+}
+
+.row-center {
+  @extend .row;
+  @include align-items(center);
+}
+
+.row-bottom {
+  @extend .row;
+  @include align-items(flex-end);
+}

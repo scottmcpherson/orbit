@@ -58,7 +58,7 @@ if (Meteor.isClient) {
       }, 500);
       Meteor.setTimeout(function(){
         animate(Orbit.blueSquareThree.view());
-      }, 1000)
+      }, 1000);
     },
   });
 }
